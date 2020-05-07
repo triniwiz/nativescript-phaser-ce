@@ -34,6 +34,7 @@ that draws into it.
 | Property    |         Type          | Description                                                                 |         Default Value         |
 | ----------- | :-------------------: | --------------------------------------------------------------------------- | :---------------------------: |
 | canvas     | TNSCanvas| Required: canvas that the `Phaser.Game` will render to                     |            `null`             |
+| renderer     | number?| Optional: choose the renderer type e.g Phaser.CANVAS (1) , Phaser.WEBGL(2)             |            `1`             |
 | width       |        number?        | Optional: height of the `Phaser.Game`                                       | `canvas height`  |
 | height      |        number?        | Optional: width of the `Phaser.Game`                                        | `canvas width` |
 | title       |        string?        | Optional: title of the `Phaser.Game`                                        |     `"tns-phaser-game"`      |
