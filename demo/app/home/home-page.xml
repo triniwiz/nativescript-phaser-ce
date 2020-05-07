@@ -1,0 +1,13 @@
+<Page
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <Label text="Home"></Label>
+    </ActionBar>
+
+    <StackLayout>
+        <Button row="1" height="40" text="Core Example" tap="goToCore"/>
+        <Button row="1" height="40" text="Monster Wants Candy" tap="goToMWC"/>
+    </StackLayout>
+</Page>
