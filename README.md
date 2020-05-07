@@ -1,6 +1,6 @@
 # nativescript-phaser-ce
 
-Tools for using Phaser-ce to build native 2D games in Expo 👾
+Tools for using Phaser-ce to build native 2D games in NativeScript 👾
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -54,7 +54,7 @@ const game = TNSPhaser.game({ canvas });
 
 ## What does it do?
 
-Under the hood, ExpoPhaser is maintaining global instances of a few libraries.
+Under the hood, TNSPhaser is maintaining global instances of a few libraries.
 
 - [Custom Phaser Pixi.js](https://github.com/photonstorm/phaser-ce/tree/master/src/pixi)
 - [Custom Phaser p2.js](https://github.com/photonstorm/phaser-ce/blob/master/build/custom/p2.js)
@@ -67,7 +67,7 @@ window.Phaser = require("phaser-ce/build/phaser");
 ```
 
 Other libs can be included but are not required. For instance you can import the custom Creature lib the same way.
-We also [override the `PIXI.WebGLRenderer.updateTexture`](https://github.com/expo/expo-phaser/tree/master/lib/Phaser.js) to make it compatible with NativeScript.
+We also [override the `PIXI.WebGLRenderer.updateTexture`](https://github.com/triniwiz/nativescript-phaser-ce/blob/master/src/phaser.js) to make it compatible with NativeScript.
 
 Finally when a new instance of `TNSPhaser.Game` is created, we set the `document.readyState` to `'complete'` and save the global instance of `context`
 
