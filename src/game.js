@@ -74,13 +74,13 @@ function game({
   game.context = context;
 
   const render = () => {
+    requestAnimationFrame(render);
+    onRender && onRender();
     if (isAndroid && !is2D) {
       canvas.nativeView.flush();
     } else if (!is2D) {
       canvas.nativeView.flush();
     }
-    requestAnimationFrame(render);
-    onRender && onRender();
   };
   if (!preventLoop) {
     render();
