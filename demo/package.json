@@ -12,11 +12,12 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
+    "@nativescript/core": "^6.5.4",
     "@nativescript/theme": "~2.3.0",
     "nativescript-accelerometer": "^3.0.0",
     "nativescript-canvas-plugin": "file:../../nativescript-canvas-plugin/src",
     "nativescript-phaser-ce": "file:../src",
-    "tns-core-modules": "~6.4.0"
+    "phaser-ce": "^2.15.1"
   },
   "devDependencies": {
     "nativescript-dev-webpack": "~1.5.0",

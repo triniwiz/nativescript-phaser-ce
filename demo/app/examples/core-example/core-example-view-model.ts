@@ -1,9 +1,9 @@
-import { Observable } from "tns-core-modules/data/observable";
+import { Observable } from "@nativescript/core/data/observable";
 import { func, images } from "../utils";
-import * as platform from "tns-core-modules/platform";
+import * as platform from "@nativescript/core/platform";
 import * as accelerometer from "nativescript-accelerometer";
 import TNSPhaser from "nativescript-phaser-ce";
-declare let Phaser: any;
+declare let Phaser: any, UIDevice;
 export class PhaserExampleViewModel extends Observable {
     gamePause: boolean = false;
     isLoading: boolean = true;
@@ -80,6 +80,7 @@ export class PhaserExampleViewModel extends Observable {
                 sensorDelay: "ui",
             }
         );
+
     }
 
     unsubscribe() {
@@ -144,7 +145,7 @@ class Game {
     game;
     playable: Playable;
     constructor({ canvas, gamePause, updateStats }) {
-        this.game = TNSPhaser.game({ canvas, renderer: 2 });
+        this.game = TNSPhaser.game({ canvas, renderer: 1 });
         this.playable = new Playable({
             game: this.game,
             gamePause,

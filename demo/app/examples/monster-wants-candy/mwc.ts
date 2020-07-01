@@ -8,7 +8,7 @@ export function loaded(args) {
 export function canvasLoaded(args) {
     canvas = args.object;
 
-    var game = new TNSPhaser.game({canvas, renderer: 1});
+    var game = TNSPhaser.game({canvas, renderer: 1});
     // add game states
 	game.state.add('Boot', Candy.Boot);
 	game.state.add('Preloader', Candy.Preloader);

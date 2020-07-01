@@ -4,8 +4,8 @@ a code-behind file. The code-behind is a great place to place your view
 logic, and to set up your page’s data binding.
 */
 
-import { NavigatedData, Page } from "tns-core-modules/ui/page";
-import { Frame } from "tns-core-modules/ui/frame";
+import { NavigatedData, Page } from "@nativescript/core/ui/page";
+import { Frame } from "@nativescript/core/ui/frame";
 import { HomeViewModel } from "./home-view-model";
 
 export function onNavigatingTo(args: NavigatedData) {
