@@ -1,16 +1,17 @@
-require('nativescript-browser-polyfill');
-function initPhaser() {
-    global.window.PIXI = global.PIXI =  global.PIXI || require('phaser-ce/build/custom/pixi');
-    global.window.p2 = global.p2 =  global.p2 || require('phaser-ce/build/custom/p2');
-    global.window.Phaser = global.Phaser =  global.Phaser || require('phaser-ce/build/phaser');
+import 'nativescript-browser-polyfill';
 
-     Phaser.Device.onInitialized.add(function (device) {
+function initPhaser() {
+    (global as any).window.PIXI = (global as any).PIXI = (global as any).PIXI || require('phaser-ce/build/custom/pixi');
+    (global as any).window.p2 = (global as any).p2 =  (global as any).p2 || require('phaser-ce/build/custom/p2');
+    (global as any).window.Phaser = (global as any).Phaser =  (global as any).Phaser || require('phaser-ce/build/phaser');
+
+    (global as any).Phaser.Device.onInitialized.add(function (device) {
         device.support32bit = true;
       });
 
-    window.PIXI.WebGLRenderer.prototype.updateTexture = function(texture) {
+      (global as any).window.PIXI.WebGLRenderer.prototype.updateTexture = function(texture) {
       if (!texture.hasLoaded || texture.source.nodeName === 'CANVAS') {
-        return false;
+      //  return false;
       }
       if (texture.source.compressionAlgorithm) {
         return this.updateCompressedTexture(texture);
@@ -43,17 +44,17 @@ function initPhaser() {
       gl.texParameteri(
         gl.TEXTURE_2D,
         gl.TEXTURE_MAG_FILTER,
-        texture.scaleMode === PIXI.scaleModes.LINEAR ? gl.LINEAR : gl.NEAREST
+        texture.scaleMode === (global as any).PIXI.scaleModes.LINEAR ? gl.LINEAR : gl.NEAREST
       );
 
       if (
         texture.mipmap &&
-        Phaser.Math.isPowerOfTwo(texture.width, texture.height)
+        (global as any).Phaser.Math.isPowerOfTwo(texture.width, texture.height)
       ) {
         gl.texParameteri(
           gl.TEXTURE_2D,
           gl.TEXTURE_MIN_FILTER,
-          texture.scaleMode === PIXI.scaleModes.LINEAR
+          texture.scaleMode === (global as any).PIXI.scaleModes.LINEAR
             ? gl.LINEAR_MIPMAP_LINEAR
             : gl.NEAREST_MIPMAP_NEAREST
         );
@@ -62,7 +63,7 @@ function initPhaser() {
         gl.texParameteri(
           gl.TEXTURE_2D,
           gl.TEXTURE_MIN_FILTER,
-          texture.scaleMode === PIXI.scaleModes.LINEAR ? gl.LINEAR : gl.NEAREST
+          texture.scaleMode === (global as any).PIXI.scaleModes.LINEAR ? gl.LINEAR : gl.NEAREST
         );
       }
 
@@ -80,7 +81,6 @@ function initPhaser() {
       return true;
     };
 
-
-    return  global.Phaser;
+    return  (global as any).Phaser;
   }
   export default initPhaser();

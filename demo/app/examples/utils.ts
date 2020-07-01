@@ -1,5 +1,5 @@
-import { ImageSource } from "tns-core-modules/image-source/image-source";
-import * as fs from "tns-core-modules/file-system";
+import { ImageSource } from "@nativescript/core/image-source/image-source";
+import * as fs from "@nativescript/core/file-system";
 const icon = "~/examples/core-example/assets/icon.png";
 const bullet = "~/examples/core-example/assets/files/bullet.png";
 const enemyBullet = "~/examples/core-example/assets/files/enemy-bullet.png";
