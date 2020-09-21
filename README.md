@@ -1,4 +1,5 @@
 # nativescript-phaser-ce
+**The source is now managed at https://github.com/NativeScript/canvas**
 
 Tools for using Phaser-ce to build native 2D games in NativeScript 👾
 
